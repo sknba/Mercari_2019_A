@@ -9,6 +9,8 @@ from dummyPy import OneHotEncoder
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 
+
+
 #creating classes
 labelencoder_c1 = LabelEncoder()
 labelencoder_c2 = LabelEncoder()
@@ -94,8 +96,8 @@ for dataset in pd.read_csv('train.tsv', sep = '\t', chunksize = 10000):
    # dataset_filtered = pd.concat([dataset_filtered, dataset['price']], axis = 1, ignore_index = True)
     dataset_filtered.to_csv('train_preprocessed.csv', mode = 'a', index = False, header = False)
     i = i + 1
-#test = pd.read_csv('train_preprocessed.csv')
-#test = test.head(11000)
+test = pd.read_csv('train_preprocessed.csv')
+test = test.head(11000)
     
     
 #preprocessing the test set (probably around 450 chunks)
